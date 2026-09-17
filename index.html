@@ -1,94 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify-Your Favourite Music</title>
-    <link rel="stylesheet" href="style.css">
-</head> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <title>Spotify — Your Favourite Music</title>
+
+  <!-- Fonts: preconnect + single request (never @import in CSS) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
 <body>
-    <nav>
-        <ul>
-            <li class="brand" ><img src="logo.png" alt = "Spotify">Spotify</li>
-            <li><a id="link" href="https://youtu.be/mmk98CRv7Jg?si=0D85N8wXYTxZSyhY">Home</a></li>
-            <li><a id="link" href="https://en.wikipedia.org/wiki/Spotify">About</a></li>
+  <div class="app">
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+      <a class="brand" href="./logo.png">
+        <img src="logo.png" alt="" width="32" height="32" />
+        <span>Spotify</span>
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li>
+            <a class="nav-link is-active" href="https://youtu.be/mmk98CRv7Jg">
+              <i class="fa-solid fa-house" aria-hidden="true"></i> Home
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="https://en.wikipedia.org/wiki/Spotify">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> About
+            </a>
+          </li>
         </ul>
-    </nav>
+      </nav>
 
-    <div class="container">
-        
-        <div class="songList">
-            <h1>Best of SPOTIFY - Current Favourite</h1>
-            <div class="songItemContainer">
-                <div class="songItem">
-                    <img alt="1">
-                    <span class="songName"> Athra Style </span>
-                    <span class="songlistplay" ><span class="timestamp" >3:50 <i id="0" class="fa-regular songItemPlay fa-2x fa-circle-play"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img alt="2">
-                    <span class="songName"> To The Star </span>
-                    <span class="songlistplay"><span class="timestamp">3:50 <i id="1" class="fa-regular songItemPlay fa-2x fa-circle-play"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img alt="3">
-                    <span class="songName"> Unveiling The Magic </span>
-                    <span class="songlistplay"><span class="timestamp">3:50 <i id="2" class="fa-regular songItemPlay fa-2x fa-circle-play"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img alt="4">
-                    <span class="songName"> Let me Love You </span>
-                    <span class="songlistplay"><span class="timestamp">3:50 <i id="3" class="fa-regular songItemPlay fa-2x fa-circle-play"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img alt="5">
-                    <span class="songName"> Let me Love You </span>
-                    <span class="songlistplay"><span class="timestamp">3:50 <i id="4" class="fa-regular songItemPlay fa-2x fa-circle-play"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img alt="6">
-                    <span class="songName"> Let me Love You </span>
-                    <span class="songlistplay"><span class="timestamp">3:50 <i id="5" class="fa-regular songItemPlay fa-2x fa-circle-play"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img alt="7">
-                    <span class="songName"> 94 Flow </span>
-                    <span class="songlistplay"><span class="timestamp">3:50 <i id="6" class="far songItemPlay fa-2x fa-circle-play"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img alt="8">
-                    <span class="songName"> Let me Love You </span>
-                    <span class="songlistplay"><span class="timestamp">3:50 <i id="7" class="fa-regular songItemPlay fa-2x fa-circle-play"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img alt="9">
-                    <span class="songName"> Let me Love You </span>
-                    <span class="songlistplay"><span class="timestamp">3:50 <i id="8" class="fa-regular songItemPlay fa-2x fa-circle-play"></i> </span></span>
-                </div>
-                <div class="songItem">
-                    <img  alt="10">
-                    <span class="songName"> Let me Love You </span>
-                    <span class="songlistplay"><span class="timestamp">3:50 <i id="9" class="fa-regular songItemPlay fa-2x fa-circle-play"></i> </span></span>
-                </div>
+      <div class="sidebar-card">
+        <p class="sidebar-card__eyebrow">Playlist</p>
+        <h2 class="sidebar-card__title">Best of Spotify</h2>
+        <p class="sidebar-card__meta">10 songs · 38 min</p>
+        <button class="btn btn--primary" type="button">
+          <i class="fa-solid fa-play" aria-hidden="true"></i> Play all
+        </button>
+      </div>
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+    <main class="main">
+      <!-- Hero -->
+      <header class="hero">
+        <div class="hero__meta">
+          <span class="hero__eyebrow">Playlist</span>
+          <h1 class="hero__title">Best of Spotify</h1>
+          <p class="hero__subtitle">
+            Your current favourites · <span class="hero__count">10 songs</span>
+          </p>
+        </div>
+      </header>
+
+      <!-- Track list -->
+      <section class="songList" aria-labelledby="tracklist-heading">
+        <h2 id="tracklist-heading" class="sr-only">Track list</h2>
+
+        <div class="songList__header" aria-hidden="true">
+          <span>#</span>
+          <span></span>
+          <span>Title</span>
+          <span>Album</span>
+          <span><i class="fa-regular fa-clock"></i></span>
+        </div>
+
+        <div class="songItemContainer">
+          <div class="songItem" data-index="0">
+            <span class="songItem__index">
+              <span class="songItem__num">1</span>
+              <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            </span>
+            <div class="songItem__art">
+              <img src="./covers/1.jpg" alt="Athra Style cover" />
+              <button class="songItemPlay songItem__play" data-index="0"
+                      aria-label="Play Athra Style">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
+              </button>
             </div>
+            <div class="songItem__meta">
+              <span class="songName">Athra Style</span>
+              <span class="songArtist">Sidhu Moose Wala</span>
+            </div>
+            <span class="songItem__album">Single</span>
+            <span class="timestamp">3:50</span>
+          </div>
+
+          <div class="songItem" data-index="1">
+            <span class="songItem__index">
+              <span class="songItem__num">2</span>
+              <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            </span>
+            <div class="songItem__art">
+              <img src="./covers/2.jpg" alt="To The Star cover" />
+              <button class="songItemPlay songItem__play" data-index="1"
+                      aria-label="Play To The Star">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="songItem__meta">
+              <span class="songName">To The Star</span>
+              <span class="songArtist">The PropheC</span>
+            </div>
+            <span class="songItem__album">The PropheC</span>
+            <span class="timestamp">3:50</span>
+          </div>
+
+          <div class="songItem" data-index="2">
+            <span class="songItem__index">
+              <span class="songItem__num">3</span>
+              <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            </span>
+            <div class="songItem__art">
+              <img src="./covers/3.jpg" alt="Unveiling The Magic cover" />
+              <button class="songItemPlay songItem__play" data-index="2"
+                      aria-label="Play Unveiling The Magic">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="songItem__meta">
+              <span class="songName">Unveiling The Magic</span>
+              <span class="songArtist">Adnan Dhool</span>
+            </div>
+            <span class="songItem__album">Single</span>
+            <span class="timestamp">3:50</span>
+          </div>
+
+          <div class="songItem" data-index="3">
+            <span class="songItem__index">
+              <span class="songItem__num">4</span>
+              <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            </span>
+            <div class="songItem__art">
+              <img src="./covers/4.jpg" alt="Kina Chir cover" />
+              <button class="songItemPlay songItem__play" data-index="3"
+                      aria-label="Play Kina Chir">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="songItem__meta">
+              <span class="songName">Kina Chir</span>
+              <span class="songArtist">The PropheC</span>
+            </div>
+            <span class="songItem__album">The PropheC</span>
+            <span class="timestamp">3:50</span>
+          </div>
+
+          <div class="songItem" data-index="4">
+            <span class="songItem__index">
+              <span class="songItem__num">5</span>
+              <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            </span>
+            <div class="songItem__art">
+              <img src="./covers/5.jpg" alt="One Love cover" />
+              <button class="songItemPlay songItem__play" data-index="4"
+                      aria-label="Play One Love">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="songItem__meta">
+              <span class="songName">One Love</span>
+              <span class="songArtist">Shubh</span>
+            </div>
+            <span class="songItem__album">Shubh</span>
+            <span class="timestamp">3:50</span>
+          </div>
+
+          <div class="songItem" data-index="5">
+            <span class="songItem__index">
+              <span class="songItem__num">6</span>
+              <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            </span>
+            <div class="songItem__art">
+              <img src="./covers/6.jpg" alt="Amplifier cover" />
+              <button class="songItemPlay songItem__play" data-index="5"
+                      aria-label="Play Amplifier">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="songItem__meta">
+              <span class="songName">Amplifier</span>
+              <span class="songArtist">Imran Khan</span>
+            </div>
+            <span class="songItem__album">Imran Khan</span>
+            <span class="timestamp">3:50</span>
+          </div>
+
+          <div class="songItem" data-index="6">
+            <span class="songItem__index">
+              <span class="songItem__num">7</span>
+              <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            </span>
+            <div class="songItem__art">
+              <img src="./covers/7.jpg" alt="94 Flow cover" />
+              <button class="songItemPlay songItem__play" data-index="6"
+                      aria-label="Play 94 Flow">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="songItem__meta">
+              <span class="songName">94 Flow</span>
+              <span class="songArtist">Big Boi Deep</span>
+            </div>
+            <span class="songItem__album">Big Boi Deep</span>
+            <span class="timestamp">3:50</span>
+          </div>
+
+          <div class="songItem" data-index="7">
+            <span class="songItem__index">
+              <span class="songItem__num">8</span>
+              <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            </span>
+            <div class="songItem__art">
+              <img src="./covers/8.jpg" alt="East Side Flow cover" />
+              <button class="songItemPlay songItem__play" data-index="7"
+                      aria-label="Play East Side Flow">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="songItem__meta">
+              <span class="songName">East Side Flow</span>
+              <span class="songArtist">Sidhu Moose Wala</span>
+            </div>
+            <span class="songItem__album">Single</span>
+            <span class="timestamp">3:50</span>
+          </div>
+
+          <div class="songItem" data-index="8">
+            <span class="songItem__index">
+              <span class="songItem__num">9</span>
+              <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            </span>
+            <div class="songItem__art">
+              <img src="./covers/9.jpg" alt="Brown Rang cover" />
+              <button class="songItemPlay songItem__play" data-index="8"
+                      aria-label="Play Brown Rang">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="songItem__meta">
+              <span class="songName">Brown Rang</span>
+              <span class="songArtist">Yo Yo Honey Singh</span>
+            </div>
+            <span class="songItem__album">Single</span>
+            <span class="timestamp">3:50</span>
+          </div>
+
+          <div class="songItem" data-index="9">
+            <span class="songItem__index">
+              <span class="songItem__num">10</span>
+              <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            </span>
+            <div class="songItem__art">
+              <img src="./covers/10.jpg" alt="Selfmade cover" />
+              <button class="songItemPlay songItem__play" data-index="9"
+                      aria-label="Play Selfmade">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="songItem__meta">
+              <span class="songName">Selfmade</span>
+              <span class="songArtist">Sidhu Moose Wala</span>
+            </div>
+            <span class="songItem__album">Single</span>
+            <span class="timestamp">3:50</span>
+          </div>
         </div>
-        <div class="songBanner"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ================= PLAYER ================= -->
+  <footer class="player">
+    <!-- Now playing -->
+    <div class="player__now">
+      <div class="player__art">
+        <img id="playerArt" src="./covers/1.jpg" alt="" />
+        <img id="gif" class="player__gif" src="./playing.gif" alt="" />
+      </div>
+      <div class="player__meta">
+        <span id="masterSongName" class="player__song">Athra Style</span>
+        <span id="masterArtist" class="player__artist">Sidhu Moose Wala</span>
+      </div>
+      <button class="icon-btn" type="button" aria-label="Save to your library">
+        <i class="fa-regular fa-heart" aria-hidden="true"></i>
+      </button>
     </div>
 
-    <div class="bottom"> 
-        <input type="range" name="range" id="myProgressBar" min="0" value ="0" max="100">
-        <div class="icons">
-            <i class="fa-solid fa-3x fa-backward-step" id="previous"></i>
-            <i class="fa-regular fa-3x fa-circle-play" id="masterPlay"></i>
-            <i class="fa-solid fa-3x fa-forward-step" id="next"></i>
-        </div>
+    <!-- Transport + progress -->
+    <div class="player__center">
+      <div class="icons">
+        <button class="icon-btn" id="shuffle" type="button" aria-label="Shuffle">
+          <i class="fa-solid fa-shuffle" aria-hidden="true"></i>
+        </button>
+        <button class="icon-btn" id="previous" type="button" aria-label="Previous track">
+          <i class="fa-solid fa-backward-step" aria-hidden="true"></i>
+        </button>
+        <button class="icon-btn icon-btn--primary" id="masterPlay" type="button"
+                aria-label="Play">
+          <i class="fa-solid fa-play" aria-hidden="true"></i>
+        </button>
+        <button class="icon-btn" id="next" type="button" aria-label="Next track">
+          <i class="fa-solid fa-forward-step" aria-hidden="true"></i>
+        </button>
+        <button class="icon-btn" id="repeat" type="button" aria-label="Repeat">
+          <i class="fa-solid fa-repeat" aria-hidden="true"></i>
+        </button>
+      </div>
 
-        <div class="songInfo">
-            <img src="./playing.gif" width="60px" alt="gif" id="gif"> <span id="masterSongName">Athra Style</span>
-        </div>
-        
+      <div class="player__progress">
+        <span class="time" id="currentTime">0:00</span>
+        <input type="range" id="myProgressBar" min="0" max="100" value="0"
+               aria-label="Seek" />
+        <span class="time" id="duration">0:00</span>
+      </div>
     </div>
-    <script src="https://kit.fontawesome.com/1315d59921.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+
+    <!-- Volume -->
+    <div class="player__right">
+      <button class="icon-btn" id="muteToggle" type="button" aria-label="Mute">
+        <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+      </button>
+      <input type="range" id="volumeBar" class="volume" min="0" max="100"
+             value="100" aria-label="Volume" />
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/1315d59921.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
 </html>
