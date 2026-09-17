@@ -2,7 +2,7 @@
 
 > A production-grade web music player built with **zero frameworks** — just vanilla JavaScript, the Web Audio API, and modern CSS. Designed to demonstrate what a senior frontend engineer reaches for when there's no React to hide behind.
 
-[**Live Demo**](https://your-deploy-url.vercel.app) · [Report a Bug](../../issues) · [Request a Feature](../../issues)
+[**Live Demo**](https://pulse-player-beta.vercel.app/) 
 
 ![Pulse Player screenshot](./docs/screenshot.png)
 
